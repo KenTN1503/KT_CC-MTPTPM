@@ -85,6 +85,37 @@
       </section>
     </main>
 
+    <section id="contact" class="bg-light py-5">
+      <div class="container">
+        <h2 class="text-center mb-4">Liên hệ với chúng tôi</h2>
+        <div class="row justify-content-center">
+          <div class="col-lg-6 col-md-8">
+            <div id="formAlert" class="d-none" role="alert"></div>
+            <form id="contactForm" novalidate>
+              <div class="mb-3">
+                <label for="inputName" class="form-label">Họ và tên <span class="text-danger">*</span></label>
+                <input type="text" class="form-control" id="inputName" name="name" placeholder="Nguyễn Văn A" required>
+                <div class="invalid-feedback">Vui lòng nhập họ và tên.</div>
+              </div>
+              <div class="mb-3">
+                <label for="inputEmail" class="form-label">Email <span class="text-danger">*</span></label>
+                <input type="email" class="form-control" id="inputEmail" name="email" placeholder="example@email.com" required>
+                <div class="invalid-feedback">Email không đúng định dạng.</div>
+              </div>
+              <div class="mb-3">
+                <label for="inputMessage" class="form-label">Lời nhắn <span class="text-danger">*</span></label>
+                <textarea class="form-control" id="inputMessage" name="message" rows="4" placeholder="Nhập lời nhắn của bạn..." required></textarea>
+                <div class="invalid-feedback">Vui lòng nhập lời nhắn.</div>
+              </div>
+              <div class="d-grid">
+                <button type="submit" class="btn btn-success">Gửi thông tin</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <footer class="bg-light text-center py-4">
       <div class="container">
         <p class="mb-0">&copy; 2026 Green Tech Hub. Bản quyền thuộc về Green Tech Hub.</p>

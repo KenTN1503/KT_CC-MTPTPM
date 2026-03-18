@@ -24,3 +24,34 @@
 #solutions .card-text {
   color: #495057;
 }
+
+/* ===== Contact Form ===== */
+#contact {
+  border-top: 3px solid #198754;
+}
+
+/* ===== Responsive Media Queries ===== */
+@media (max-width: 767.98px) {
+  .hero-section {
+    min-height: 220px;
+    padding: 2rem 1rem;
+  }
+
+  .hero-section .display-6 {
+    font-size: 1.5rem;
+  }
+
+  #solutions .card {
+    margin-bottom: 1rem;
+  }
+
+  #contact .col-lg-6 {
+    padding: 0 1rem;
+  }
+}
+
+@media (max-width: 575.98px) {
+  .hero-section .display-6 {
+    font-size: 1.25rem;
+  }
+}

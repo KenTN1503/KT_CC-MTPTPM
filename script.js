@@ -16,11 +16,32 @@ document.addEventListener('DOMContentLoaded', function () {
     return regex.test(email);
   }
 
+  const nameInput = form.querySelector('input[name="name"]');
+  const messageInput = form.querySelector('textarea[name="message"]');
+  const formAlert = document.getElementById('formAlert');
+
+  function showAlert(message, type) {
+    formAlert.textContent = message;
+    formAlert.className = 'alert alert-' + type;
+  }
+
   form.addEventListener('submit', function (event) {
     event.preventDefault();
 
     let isFormValid = true;
 
+    // Validate Họ tên
+    const nameValue = nameInput ? nameInput.value.trim() : '';
+    if (nameInput) {
+      if (!nameValue) {
+        nameInput.classList.add('is-invalid');
+        isFormValid = false;
+      } else {
+        nameInput.classList.remove('is-invalid');
+      }
+    }
+
+    // Validate Email (Regex)
     const emailValue = emailInput.value.trim();
     if (!validateEmail(emailValue)) {
       emailInput.classList.add('is-invalid');
@@ -29,37 +50,37 @@ document.addEventListener('DOMContentLoaded', function () {
       emailInput.classList.remove('is-invalid');
     }
 
-    // Nếu cần check thêm các field khác, thêm tại đây.
-
-    if (isFormValid) {
-      // xoá class lỗi của các input nữa (nếu có) trước khi thông báo
-      const invalidFields = form.querySelectorAll('.is-invalid');
-      invalidFields.forEach((field) => field.classList.remove('is-invalid'));
-
-      // Lấy dữ liệu từ form
-      const nameInput = form.querySelector('input[name="name"]');
-      const messageInput = form.querySelector('textarea[name="message"]');
-
-      const nameValue = nameInput ? nameInput.value.trim() : '';
-      const messageValue = messageInput ? messageInput.value.trim() : '';
-
-      // Tạo object dữ liệu
-      const submissionData = {
-        name: nameValue,
-        email: emailValue,
-        message: messageValue,
-        timestamp: new Date().toISOString()
-      };
-
-      // Chuyển thành JSON và lưu vào LocalStorage
-      localStorage.setItem('contactSubmission', JSON.stringify(submissionData));
-
-      alert('Gửi thông tin thành công!');
-      // hoặc dùng modal Bootstrap (đã có sẵn phía HTML):
-      // const successModal = new bootstrap.Modal(document.getElementById('successModal'));
-      // successModal.show();
-
-      form.reset();
+    // Validate Lời nhắn
+    const messageValue = messageInput ? messageInput.value.trim() : '';
+    if (messageInput) {
+      if (!messageValue) {
+        messageInput.classList.add('is-invalid');
+        isFormValid = false;
+      } else {
+        messageInput.classList.remove('is-invalid');
+      }
     }
+
+    if (!isFormValid) {
+      // Hiển thị thông báo lỗi màu đỏ
+      showAlert('Vui lòng kiểm tra lại thông tin đã nhập.', 'danger');
+      return;
+    }
+
+    // Xoá tất cả class lỗi
+    form.querySelectorAll('.is-invalid').forEach((f) => f.classList.remove('is-invalid'));
+
+    // Lưu dữ liệu vào LocalStorage
+    const submissionData = {
+      name: nameValue,
+      email: emailValue,
+      message: messageValue,
+      timestamp: new Date().toISOString()
+    };
+    localStorage.setItem('contactSubmission', JSON.stringify(submissionData));
+
+    // Hiển thị thông báo thành công màu xanh
+    showAlert('Gửi thông tin thành công!', 'success');
+    form.reset();
   });
 });
