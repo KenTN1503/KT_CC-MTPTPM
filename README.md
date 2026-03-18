@@ -11,5 +11,5 @@ Website giới thiệu các giải pháp công nghệ bảo vệ môi trường 
 - Quy trình: To Do -> In Progress -> Code Review -> Testing -> Done.
 
 ## Cách chạy dự án
-1. Clone repo: `git clone [[Link_Repo]](https://github.com/KenTN1503/KT_CC-MTPTPM)`
+1. Clone repo: `git clone https://github.com/KenTN1503/KT_CC-MTPTPM
 3. Mở file `index.html` trên trình duyệt.
