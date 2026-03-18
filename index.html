@@ -4,27 +4,59 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Green Tech Hub</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-nz2d1KaMdH0Gq6AI8m4hmmQw97uD1WUxk/XCMnGjzzE4CMLQzqOJU2q8m8p7HQhM" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&family=Source+Sans+3:wght@400;600&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-9sAK0kceD0wx/8qC6wyaypR9q1CRzqZP+2ZdZj9N5Mm3K2sTyZk8Z5G/Cg06i1z5iDz7g+ZX8inH7eXb0uwuVig==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" referrerpolicy="no-referrer">
   </head>
   <body>
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top gth-navbar">
+      <div class="container">
+        <a class="navbar-brand fw-bold" href="#top">GTH</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav" aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="mainNav">
+          <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+            <li class="nav-item"><a class="nav-link" href="#intro">Giới thiệu</a></li>
+            <li class="nav-item"><a class="nav-link" href="#solutions">Giải pháp</a></li>
+            <li class="nav-item"><a class="nav-link" href="#highlights">Nổi bật</a></li>
+            <li class="nav-item"><a class="nav-link" href="#contact">Liên hệ</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <div id="top"></div>
     <header class="hero-section text-center d-flex align-items-center justify-content-center">
       <div class="container">
-        <h1 class="text-white display-6 fw-bold">Technology for a Greener Future</h1>
+        <h1 class="text-white fw-bold mb-3 reveal">Technology for a Greener Future</h1>
+        <p class="lead text-white-50 mb-4 reveal delay-1">Green Tech Hub kết nối giải pháp bền vững cho tương lai sạch hơn.</p>
+        <a href="#solutions" class="btn btn-light btn-lg px-4">Khám phá giải pháp</a>
       </div>
     </header>
 
     <main class="container my-5">
-      <section class="mb-5">
-        <h2>Giới thiệu</h2>
-        <p>Green Tech Hub là một nền tảng hỗ trợ các ý tưởng và dự án công nghệ thân thiện với môi trường.</p>
+      <section id="intro" class="intro-section mb-5 reveal">
+        <div class="section-heading text-center mb-4 reveal">
+          <h2>Giới thiệu</h2>
+          <p class="text-muted mb-0">Nền tảng kết nối công nghệ xanh, đổi mới và phát triển bền vững.</p>
+        </div>
+        <div class="intro-card p-4 p-md-5 reveal delay-1">
+          <p class="mb-0">Green Tech Hub là một nền tảng hỗ trợ các ý tưởng và dự án công nghệ thân thiện với môi trường.</p>
+        </div>
       </section>
 
       <section id="solutions" class="mb-5">
+        <div class="section-heading text-center mb-4">
+          <h2>Solutions</h2>
+          <p class="text-muted mb-0">Ba hướng giải pháp cốt lõi cho hệ sinh thái xanh.</p>
+        </div>
         <div class="row row-cols-1 row-cols-md-3 g-4">
-          <div class="col">
-            <div class="card h-100 text-center">
+          <div class="col reveal">
+            <div class="card solution-card h-100 text-center">
               <div class="card-body">
                 <i class="fas fa-solar-panel fa-3x text-success mb-3" aria-hidden="true"></i>
                 <h3 class="card-title">Solar Energy</h3>
@@ -33,8 +65,8 @@
             </div>
           </div>
 
-          <div class="col">
-            <div class="card h-100 text-center">
+          <div class="col reveal delay-1">
+            <div class="card solution-card h-100 text-center">
               <div class="card-body">
                 <i class="fas fa-recycle fa-3x text-success mb-3" aria-hidden="true"></i>
                 <h3 class="card-title">Waste Management</h3>
@@ -43,8 +75,8 @@
             </div>
           </div>
 
-          <div class="col">
-            <div class="card h-100 text-center">
+          <div class="col reveal delay-2">
+            <div class="card solution-card h-100 text-center">
               <div class="card-body">
                 <i class="fas fa-water fa-3x text-success mb-3" aria-hidden="true"></i>
                 <h3 class="card-title">Smart Irrigation</h3>
@@ -55,9 +87,13 @@
         </div>
       </section>
 
-      <section class="row gy-4">
-        <article class="col-md-4">
-          <div class="card h-100">
+      <section id="highlights" class="mb-5">
+        <div class="section-heading text-center mb-4">
+          <h2>Điểm nổi bật</h2>
+        </div>
+        <div class="row gy-4">
+        <article class="col-md-4 reveal">
+          <div class="card feature-card h-100">
             <div class="card-body">
               <h3 class="card-title">Mục tiêu</h3>
               <p class="card-text">Thúc đẩy sáng tạo xanh, giảm phát thải và thực hành hiệu quả năng lượng.</p>
@@ -65,8 +101,8 @@
           </div>
         </article>
 
-        <article class="col-md-4">
-          <div class="card h-100">
+        <article class="col-md-4 reveal delay-1">
+          <div class="card feature-card h-100">
             <div class="card-body">
               <h3 class="card-title">Hoạt động</h3>
               <p class="card-text">Hội thảo, hackathon và mạng lưới đối tác chiến lược.</p>
@@ -74,55 +110,61 @@
           </div>
         </article>
 
-        <article class="col-md-4">
-          <div class="card h-100">
+        <article class="col-md-4 reveal delay-2">
+          <div class="card feature-card h-100">
             <div class="card-body">
               <h3 class="card-title">Cộng đồng</h3>
               <p class="card-text">Kết nối chuyên gia, nhà đầu tư và nhà phát triển vì mục tiêu chung.</p>
             </div>
           </div>
         </article>
+        </div>
       </section>
     </main>
 
-    <section id="contact" class="bg-light py-5">
+    <section id="contact" class="py-5">
       <div class="container">
-        <h2 class="text-center mb-4">Liên hệ với chúng tôi</h2>
+        <div class="section-heading text-center mb-4">
+          <h2>Liên hệ với chúng tôi</h2>
+          <p class="text-muted mb-0">Để lại thông tin, đội ngũ Green Tech Hub sẽ phản hồi sớm nhất.</p>
+        </div>
         <div class="row justify-content-center">
-          <div class="col-lg-6 col-md-8">
-            <div id="formAlert" class="d-none" role="alert"></div>
-            <form id="contactForm" novalidate>
-              <div class="mb-3">
-                <label for="inputName" class="form-label">Họ và tên <span class="text-danger">*</span></label>
-                <input type="text" class="form-control" id="inputName" name="name" placeholder="Nguyễn Văn A" required>
-                <div class="invalid-feedback">Vui lòng nhập họ và tên.</div>
-              </div>
-              <div class="mb-3">
-                <label for="inputEmail" class="form-label">Email <span class="text-danger">*</span></label>
-                <input type="email" class="form-control" id="inputEmail" name="email" placeholder="example@email.com" required>
-                <div class="invalid-feedback">Email không đúng định dạng.</div>
-              </div>
-              <div class="mb-3">
-                <label for="inputMessage" class="form-label">Lời nhắn <span class="text-danger">*</span></label>
-                <textarea class="form-control" id="inputMessage" name="message" rows="4" placeholder="Nhập lời nhắn của bạn..." required></textarea>
-                <div class="invalid-feedback">Vui lòng nhập lời nhắn.</div>
-              </div>
-              <div class="d-grid">
-                <button type="submit" class="btn btn-success">Gửi thông tin</button>
-              </div>
-            </form>
+          <div class="col-lg-6 col-md-8 reveal">
+            <div class="contact-card p-4 p-md-5">
+              <div id="formAlert" class="d-none" role="alert"></div>
+              <form id="contactForm" novalidate>
+                <div class="mb-3">
+                  <label for="inputName" class="form-label">Họ và tên <span class="text-danger">*</span></label>
+                  <input type="text" class="form-control" id="inputName" name="name" placeholder="Nguyễn Văn A" required>
+                  <div class="invalid-feedback">Vui lòng nhập họ và tên.</div>
+                </div>
+                <div class="mb-3">
+                  <label for="inputEmail" class="form-label">Email <span class="text-danger">*</span></label>
+                  <input type="email" class="form-control" id="inputEmail" name="email" placeholder="example@email.com" required>
+                  <div class="invalid-feedback">Email không đúng định dạng.</div>
+                </div>
+                <div class="mb-3">
+                  <label for="inputMessage" class="form-label">Lời nhắn <span class="text-danger">*</span></label>
+                  <textarea class="form-control" id="inputMessage" name="message" rows="4" placeholder="Nhập lời nhắn của bạn..." required></textarea>
+                  <div class="invalid-feedback">Vui lòng nhập lời nhắn.</div>
+                </div>
+                <div class="d-grid">
+                  <button type="submit" class="btn btn-success btn-lg">Gửi thông tin</button>
+                </div>
+              </form>
+            </div>
           </div>
         </div>
       </div>
     </section>
 
-    <footer class="bg-light text-center py-4">
+    <footer class="site-footer text-center py-4">
       <div class="container">
         <p class="mb-0">&copy; 2026 Green Tech Hub. Bản quyền thuộc về Green Tech Hub.</p>
       </div>
     </footer>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-fQybjgWLrvvRgtW6bFlB7jaZrFsaBXjE9eKfGv8VimjYIIVR5o5bLYLD3I0XOE8H" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
     <script src="script.js"></script>
   </body>
 </html>

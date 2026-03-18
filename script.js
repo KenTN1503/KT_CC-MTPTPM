@@ -1,4 +1,34 @@
 document.addEventListener('DOMContentLoaded', function () {
+  const revealElements = document.querySelectorAll('.reveal');
+  if (revealElements.length > 0) {
+    const observer = new IntersectionObserver(
+      (entries, obs) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('is-visible');
+            obs.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.14 }
+    );
+
+    revealElements.forEach((el) => observer.observe(el));
+  }
+
+  const navLinks = document.querySelectorAll('.navbar .nav-link');
+  const navCollapseElement = document.getElementById('mainNav');
+  if (navCollapseElement && window.bootstrap) {
+    const navCollapse = new bootstrap.Collapse(navCollapseElement, { toggle: false });
+    navLinks.forEach((link) => {
+      link.addEventListener('click', function () {
+        if (window.innerWidth < 992) {
+          navCollapse.hide();
+        }
+      });
+    });
+  }
+
   const form = document.getElementById('contactForm');
   if (!form) {
     console.warn('contactForm not found on page');
@@ -22,7 +52,12 @@ document.addEventListener('DOMContentLoaded', function () {
 
   function showAlert(message, type) {
     formAlert.textContent = message;
-    formAlert.className = 'alert alert-' + type;
+    formAlert.className = 'alert alert-' + type + ' mb-3';
+  }
+
+  function hideAlert() {
+    formAlert.className = 'd-none';
+    formAlert.textContent = '';
   }
 
   form.addEventListener('submit', function (event) {
@@ -82,5 +117,18 @@ document.addEventListener('DOMContentLoaded', function () {
     // Hiển thị thông báo thành công màu xanh
     showAlert('Gửi thông tin thành công!', 'success');
     form.reset();
+  });
+
+  [nameInput, emailInput, messageInput].forEach((field) => {
+    if (!field) {
+      return;
+    }
+
+    field.addEventListener('input', function () {
+      if (field.value.trim()) {
+        field.classList.remove('is-invalid');
+      }
+      hideAlert();
+    });
   });
 });
