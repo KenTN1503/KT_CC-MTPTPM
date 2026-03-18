@@ -7,7 +7,7 @@
 Website giới thiệu các giải pháp công nghệ bảo vệ môi trường và thu thập thông tin đối tác.
 
 ## Quản lý dự án (Jira)
-- Link Jira: [[Dán link Jira của bạn vào đây]](https://ken15032004.atlassian.net/jira/software/projects/GTH/boards/3)
+- Link Jira: https://ken15032004.atlassian.net/jira/software/projects/GTH/boards/3
 - Quy trình: To Do -> In Progress -> Code Review -> Testing -> Done.
 
 ## Cách chạy dự án
