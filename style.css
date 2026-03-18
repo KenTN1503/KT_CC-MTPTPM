@@ -1,0 +1,26 @@
+.hero-section {
+  background-color: #198754;
+  min-height: 300px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.hero-section .display-6 {
+  color: #ffffff;
+  font-size: 2.25rem;
+}
+
+#solutions .card {
+  border: 1px solid #e2e8f0;
+}
+
+#solutions .card-title {
+  font-size: 1.25rem;
+  margin-top: 0.75rem;
+}
+
+#solutions .card-text {
+  color: #495057;
+}
